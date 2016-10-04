@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+
+  "name": "GitHub Analysis",
+  "description": "Bring static analysis to GitHub.",
+  "version": "1.0",
+
+  "background": {
+    "scripts": ["jquery.min.js", "background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "css": ["analysis.css"],
+      "js": ["jquery.min.js", "analysis.js"]
+    }
+  ],
+
+  "browser_action": {
+    "default_title": "Make this page red"
+  },
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "https://ajax.googleapis.com/",
+    "https://github.com/"
+  ]
+}
+
